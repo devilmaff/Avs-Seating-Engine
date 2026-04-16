@@ -1,5 +1,16 @@
 // Global State
 let allStudents1 = [];
+
+function checkLogin() {
+    const user = document.getElementById('loginUsername').value;
+    const pass = document.getElementById('loginPassword').value;
+    if (user === 'husain2006' && pass === 'husain2006') {
+        document.getElementById('login-overlay').style.display = 'none';
+        document.getElementById('main-app').style.display = 'flex';
+    } else {
+        document.getElementById('loginError').style.display = 'block';
+    }
+}
 let allStudents2 = [];
 let currentFile1Name = "";
 let currentFile2Name = "";
@@ -308,6 +319,9 @@ function renderTable(columnsData, rowsPerBox, hallNoOverride, targetCols, person
     let hallNo = hallNoOverride || document.getElementById('hallNo').value;
     let session = document.getElementById('session').value;
     let seatingDay = document.getElementById('seatingDay').value;
+    let leftSig = document.getElementById('leftSignature') ? document.getElementById('leftSignature').value : 'EC';
+    let centerSig = document.getElementById('centerSignature') ? document.getElementById('centerSignature').value : 'HOD';
+    let rightSig = document.getElementById('rightSignature') ? document.getElementById('rightSignature').value : 'PRINCIPAL';
 
     let validCols = targetCols;
     if (!validCols || validCols.length === 0) {
@@ -406,9 +420,9 @@ function renderTable(columnsData, rowsPerBox, hallNoOverride, targetCols, person
 
     // Signatures
     html += `<tr>`;
-    html += `<td colspan="6" class="textCenter fontWeightBold no-border" style="padding-top:20px;">EC</td>`;
-    html += `<td colspan="6" class="textCenter fontWeightBold no-border" style="padding-top:20px;">HOD</td>`;
-    html += `<td colspan="6" class="textCenter fontWeightBold no-border" style="padding-top:20px;">PRINCIPAL</td>`;
+    html += `<td colspan="6" class="textCenter fontWeightBold no-border" style="padding-top:20px;">${leftSig}</td>`;
+    html += `<td colspan="6" class="textCenter fontWeightBold no-border" style="padding-top:20px;">${centerSig}</td>`;
+    html += `<td colspan="6" class="textCenter fontWeightBold no-border" style="padding-top:20px;">${rightSig}</td>`;
     html += `</tr>`;
 
     html += `

@@ -47,7 +47,7 @@ body {
 }
 
 .app-container {
-    max-width: 1500px;
+    max-width: 1100px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -115,7 +115,6 @@ label {
 
 /* Inputs & Form Controls */
 input[type="text"],
-input[type="password"],
 select {
     width: 100%;
     padding: 10px 14px;
@@ -160,24 +159,6 @@ input[type="file"] {
 input[type="file"]:hover {
     border-color: var(--primary);
     background: var(--bg-surface);
-}
-
-/* Style the 'Choose File' button specifically */
-input[type="file"]::file-selector-button {
-    background-color: var(--primary);
-    color: white;
-    border: none;
-    padding: 6px 14px;
-    border-radius: var(--radius-sm);
-    cursor: pointer;
-    margin-right: 12px;
-    font-weight: 600;
-    transition: all 0.2s ease;
-}
-
-input[type="file"]::file-selector-button:hover {
-    background-color: var(--primary-hover);
-    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
 }
 
 /* Buttons */
@@ -445,50 +426,4 @@ input[type="file"]::file-selector-button:hover {
     margin-bottom: 30px;
     padding-bottom: 30px;
     border-bottom: 2px dashed #e2e8f0;
-}
-
-/* Login Screen Styles */
-.login-wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--bg-page);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-}
-
-.login-box {
-    background: var(--bg-surface);
-    padding: 40px;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-lg);
-    width: 90%;
-    max-width: 400px;
-    text-align: center;
-    border: 1px solid var(--border);
-}
-
-.login-box h2 {
-    margin-bottom: 10px;
-    color: var(--text-main);
-}
-
-.login-box p {
-    margin-bottom: 24px;
-    color: var(--text-muted);
-    font-size: 0.95rem;
-}
-
-.login-box .input-group {
-    margin-bottom: 16px;
-    text-align: left;
-}
-
-.login-box button {
-    width: 100%;
-    margin-top: 10px;
 }
